@@ -1177,17 +1177,6 @@ p4 +
   scale_y_continuous(breaks = c(10, 20, 30, 40, 50, 60, 70, 80)) +
   xlab(NULL) +
   ylab("Mass loss (%)") +
-<<<<<<< HEAD
-  geom_hline(yintercept = 47.6, 
-             linetype = "dashed",
-             linewidth = 1,
-             colour = "#228833") + 
-  geom_hline(yintercept = 36.7, 
-             linetype = "dashed", 
-             linewidth = 1,
-             colour = "#CCBB44") +
-=======
->>>>>>> 6ce51e6 (Fixed figure 4 and 5 to implement the reviewer's comments in Applied Soil Ecology.)
   scale_x_discrete(name = NULL, 
                    labels = c("W_leaf", 
                               "D_leaf", 
@@ -1231,13 +1220,6 @@ p5 +
                               "Domesticated")) +
   scale_y_continuous(limits = c(-85, 130),
                      breaks = c(-75, -50, -25, 0, 25, 50, 75, 100, 125)) +
-<<<<<<< HEAD
-  geom_hline(yintercept = 4.95, 
-             linetype = "dashed", 
-             linewidth = 0.75,
-             colour = "#B8A598") +
-=======
->>>>>>> 6ce51e6 (Fixed figure 4 and 5 to implement the reviewer's comments in Applied Soil Ecology.)
   theme_bw() +
   theme(
     panel.grid = element_blank(),
