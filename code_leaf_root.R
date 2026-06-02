@@ -977,8 +977,8 @@ p2_1 <- pca_plot_both(quality_complete,
                       ) +
   scale_colour_manual(name = "Organ", 
                       values = c("#228833", "#CCBB44")) +
-  xlab("Dimension 1 (35.43%)") +
-  ylab("Dimension 2 (19.86%)") +
+  xlab("PC 1 (35.43%)") +
+  ylab("PC 2 (19.86%)") +
   theme(
     legend.position = "top"
   )
@@ -1004,8 +1004,8 @@ p2_2 <- fviz_pca_var(
 
 p2_2 <- p2_2 +
   ggtitle(NULL) + 
-  xlab("Dimension 1 (31.7%)") +
-  ylab("Dimension 2 (23.8%)") +
+  xlab("PC 1 (35.43%)") +
+  ylab("PC 2 (19.86%)") +
   theme(
     panel.grid = element_blank()
   )
@@ -1046,8 +1046,8 @@ p3_1 <- pca_plot(quality_leaf,
                                  "#D55E00",
                                  "#CC79A7",
                                  "#000000")) +
-  xlab("Dimension 1 (38.14%)") +
-  ylab("Dimension 2 (23.09%)") +
+  xlab("PC 1 (38.14%)") +
+  ylab("PC 2 (23.09%)") +
   theme(
     legend.position = "top",
     panel.grid = element_blank()
@@ -1098,8 +1098,8 @@ p3_3<- pca_plot(quality_root,
                                  "#CC79A7",
                                  "#000000")) +
   
-  xlab("Dimension 1 (45.53%)") +
-  ylab("Dimension 2 (19.19%)") +
+  xlab("PC 1 (45.53%)") +
+  ylab("PC 2 (19.19%)") +
   theme(
     legend.position = "top",
     panel.grid = element_blank()
@@ -1170,10 +1170,13 @@ p4 +
   facet_wrap(~sp_richness, nrow = 1, 
              ncol = 3
   ) +
-  geom_jitter(aes(shape = organ),
+  geom_jitter(aes(shape = dom_status,
+                  colour = organ),
               size = 1.2,
               alpha = 1/1.5
   ) +
+  scale_colour_manual(name = "Organ", 
+                      values = c("#228833", "#CCBB44")) +
   scale_y_continuous(breaks = c(10, 20, 30, 40, 50, 60, 70, 80)) +
   xlab(NULL) +
   ylab("Mass loss (%)") +
@@ -1210,9 +1213,13 @@ p5 +
              nrow = 1, 
              ncol = 2
   ) +
-  geom_jitter(aes(shape = dom_status),
+  geom_jitter(aes(shape = dom_status,
+                  colour = sp_richness),
               size = 1,
               alpha = 1/1.5) +
+  scale_colour_manual(name = "Mixture richness", 
+                      values = c("2" = "#BE3B40",
+                                 "4" = "#5137C0")) +
   xlab(NULL) +
   ylab("Mixture effects of mass loss (%)") +
   scale_x_discrete(name = NULL, 
